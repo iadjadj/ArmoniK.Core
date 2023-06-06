@@ -1,0 +1,46 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    ":semanticCommits"
+ ],
+  "packageRules": [
+    {
+      "matchPackagePrefixes": [ "ArmoniK.Api"  ],
+      "groupName": "packages ArmoniK.Api" 
+    },
+    {
+      "matchPackagePrefixes": [ "ArmoniK" ],
+      "excludePackagePrefes": [ "ArmoniK.Api" ],
+      "groupName": "packages Armonik"
+    },
+    {
+      "description": "Group dependencies from docker files ",
+      "matchPaths": [ "**Docker**",
+                      "**docker**"
+                    ],
+      "groupName": "packages Dockerfile"
+    },
+    {
+      "matchPackagePrefixes": [ "Htc.Mock" ],
+      "excludePackagePrefixes": [ "ArmoniK.Api" ],
+      "groupName": "packages HtcMock"
+    }, 
+    {
+      "description": "Group dependencies from nuget ",
+      "matchPaths": [ "**.csproj"
+                    ],
+      "groupName": "packages nuget"
+      
+    } 
+    {
+      "matchPackagePatterns": ["*"],
+      "excludePackagePrefixes": [ "ArmoniK", "Htc.Mock" ],
+      "matchUpdateTypes": [
+        "minor",
+        "major"
+      ]
+    }
+  ]
+
+}
