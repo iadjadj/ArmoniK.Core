@@ -9,7 +9,7 @@
   
   "packageRules": [
     {
-      "matchPackagesPatterns":["*"],
+      "matchPackagePatterns":["*"],
       "groupName":"other packages"
     }
   ]
