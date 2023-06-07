@@ -12,7 +12,7 @@
     },
     {
       "matchPackagePrefixes": [ "ArmoniK" ],
-      "excludePackagePrefes": [ "ArmoniK.Api" ],
+      "excludePackagePrefixes": [ "ArmoniK.Api" ],
       "groupName": "packages Armonik",
       "matchUpdateTypes": [
         "minor",
