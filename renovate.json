@@ -19,12 +19,6 @@
     {
       "matchPackagePrefixes":["ArmoniK.Api"],
       "groupName":"ArmoniK.Api"
-    },
-    {
-    "matchPaths": ["**.csproj"],
-     "groupName": "all nuget"
     }
-    
-    
   ]
 }
