@@ -4,27 +4,6 @@
     "config:base",
     ":semanticCommits",
     ":dependencyDashboard"
- ],
-  "packageRules": [
-    {
-      "matchPackagePrefixes": [ "ArmoniK.Api"  ],
-      "groupName": "packages ArmoniK.Api" 
-    },
-    {
-      "matchPackagePrefixes": [ "ArmoniK" ],
-      "excludePackagePrefixes": [ "ArmoniK.Api" ],
-      "groupName": "packages Armonik"
-    },
-    {
-      "matchPackagePrefixes": [ "Htc.Mock" ],
-      "groupName": "packages HtcMock"
-    }, 
-    {
-      "matchPackagePrefixes": [ "*" ],
-      "excludePackagePrefixes": ["ArmoniK","Htc.Mock"],
-      "groupName": "packages other"
-      
-    }
-  ]
+ ]
 
 }
