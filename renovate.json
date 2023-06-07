@@ -12,7 +12,7 @@
     {
       "matchPackagePrefixes": [ "ArmoniK" ],
       "excludePackagePrefes": [ "ArmoniK.Api" ],
-      "groupName": "packages Armonik"
+      "groupName": "packages Armonik",
       "matchUpdateTypes": [
         "minor",
         "major"
@@ -36,7 +36,16 @@
                     ],
       "groupName": "packages nuget"
       
+    }, 
+    {
+      "description": "Group dependencies from nuget ",
+      "matchPaths": [ "**.tf"
+                    ],
+      "excludePackagePrefixes": ["ArmoniK"],
+      "groupName": "packages nuget"
+      
     } 
+
   ]
 
 }
