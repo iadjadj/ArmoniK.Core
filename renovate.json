@@ -4,15 +4,8 @@
   "extends": [
     "config:base",
     ":semanticCommits",
-    "docker:*",
-    ":dependencyDashboard"
+    ":dependencyDashboardApproval"
  ],
-   "docker": {
-    "enabled": true,
-    "extends": ["docker:*"],
-    "labels": ["docker"]
-  },
-  
   "packageRules": [
     {
       "matchPackagePatterns":["*"],
