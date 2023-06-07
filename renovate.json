@@ -18,8 +18,7 @@
     },
     {
       "matchPackagePrefixes":["ArmoniK"],
-      "groupName":"ArmoniK",
-      "excludePackagePrefixes":["ArmoniK.Api"]
+      "groupName":"ArmoniK"
     },
     {
     "matchPaths": ["**.csproj"],
