@@ -19,7 +19,7 @@
     {
       "matchPackagePrefixes":["ArmoniK.Api"],
       "groupName":"ArmoniK.Api"
-    }
+    },
     {
       "matchPackagePrefixes":[" Htc.Mock"],
       "groupName":" Htc.Mock"
