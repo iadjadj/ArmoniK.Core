@@ -4,6 +4,13 @@
     "config:base",
     ":semanticCommits",
     ":dependencyDashboard"
- ]
-
+ ],
+  
+  
+  "packageRules": [
+    {
+      "matchPackagesPatterns":["*"],
+      "groupName":"other packages"
+    }
+  ]
 }
