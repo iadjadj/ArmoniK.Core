@@ -25,7 +25,7 @@
     }, 
     {
       "description": "Group other",
-      "matchPaths": [ "*" ],
+      "matchPackagePrefixes": [ "*" ],
       "excludePackagePrefixes": ["ArmoniK","Htc.Mock"],
       "groupName": "packages terraform"
       
