@@ -23,17 +23,17 @@
       "matchPackagePrefixes":[ "Htc.Mock" ],
       "groupName":" Htc.Mock"
     },
-   {
+    {
       "groupName": "NuGet",
-      "packagePatterns": ["nuget/*"]
+      "packageNames": ["^nuget/"]
     },
     {
       "groupName": "Terraform",
-      "packagePatterns": ["terraform/*"]
+      "packageNames": ["^terraform/"]
     },
     {
       "groupName": "Docker",
-      "packagePatterns": ["docker/*"]
+      "packageNames": ["^docker/"]
     }
   ]
 }
