@@ -15,7 +15,7 @@
     {
       "matchPackagePrefixes":["ArmoniK.Api"],
       "groupeName":"ArmoniK.Api"
-    }
+    },
     {
       "matchPackagePrefixes":["ArmoniK"],
       "groupeName":"ArmoniK",
