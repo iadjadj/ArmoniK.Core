@@ -14,12 +14,12 @@
     },
     {
       "matchPackagePrefixes":["ArmoniK.Api"],
-      "groupeName":"ArmoniK.Api"
+      "groupName":"ArmoniK.Api"
     },
     {
       "matchPackagePrefixes":["ArmoniK"],
-      "groupeName":"ArmoniK",
-      "excludePackgesPrefixes":["ArmoniK.Api"]
+      "groupName":"ArmoniK",
+      "excludePackgePefixes":["ArmoniK.Api"]
     }
   ]
 }
