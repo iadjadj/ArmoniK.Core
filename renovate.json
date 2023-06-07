@@ -11,6 +11,15 @@
     {
       "matchPackagePatterns":["*"],
       "groupName":"other packages"
+    },
+    {
+      "matchPackagePrefixes":["ArmoniK.Api"],
+      "groupeName":"ArmoniK.Api"
+    }
+    {
+      "matchPackagePrefixes":["ArmoniK"],
+      "groupeName":"ArmoniK",
+      "excludePackgesPrefixes":["ArmoniK.Api"]
     }
   ]
 }
