@@ -21,7 +21,7 @@
       "groupName":"ArmoniK.Api"
     },
     {
-      "matchPackagePrefixes":[" Htc.Mock"],
+      "matchPackagePrefixes":[ "Htc.Mock" ],
       "groupName":" Htc.Mock"
     }
   ]
