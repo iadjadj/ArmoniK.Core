@@ -19,22 +19,8 @@
       ]
     },
     {
-      "description": "Group dependencies from docker files ",
-      "matchPaths": [ "**Docker**",
-                      "**docker**"
-                    ],
-      "groupName": "packages Dockerfile"
-    },
-    {
       "matchPackagePrefixes": [ "Htc.Mock" ],
       "groupName": "packages HtcMock"
-    }, 
-    {
-      "description": "Group dependencies from nuget ",
-      "matchPaths": [ "**.csproj"
-                    ],
-      "groupName": "packages nuget"
-      
     }, 
     {
       "description": "Group other",
