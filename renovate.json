@@ -27,7 +27,6 @@
     },
     {
       "matchPackagePrefixes": [ "Htc.Mock" ],
-      "excludePackagePrefixes": [ "ArmoniK.Api" ],
       "groupName": "packages HtcMock"
     }, 
     {
@@ -38,10 +37,9 @@
       
     }, 
     {
-      "description": "Group dependencies from nuget ",
-      "matchPaths": [ "**.tf"
-                    ],
-      "excludePackagePrefixes": ["ArmoniK"],
+      "description": "Group other",
+      "matchPaths": [ "*" ],
+      "excludePackagePrefixes": ["ArmoniK","Htc.Mock"],
       "groupName": "packages terraform"
       
     }
