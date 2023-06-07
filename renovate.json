@@ -43,10 +43,16 @@
       "matchPaths": [ "**.tf"
                     ],
       "excludePackagePrefixes": ["ArmoniK"],
-      "groupName": "packages nuget"
+      "groupName": "packages terraform"
       
-    } 
-
+    },
+    {
+      "description": "Group dependencies from terra ",
+      "matchPaths": [ "*" ],
+      "excludePackagePrefixes": ["ArmoniK"],
+      "groupName": "packages terraform"
+      
+    },
   ]
 
 }
