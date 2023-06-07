@@ -25,18 +25,15 @@
     },
    {
       "groupName": "NuGet",
-      "packagePatterns": ["nuget/*"],
-      "datasourceTemplate": "nuget"
+      "packagePatterns": ["nuget/*"]
     },
     {
       "groupName": "Terraform",
-      "packagePatterns": ["terraform/*"],
-      "datasourceTemplate": "terraform"
+      "packagePatterns": ["terraform/*"]
     },
     {
       "groupName": "Docker",
-      "packagePatterns": ["docker/*"],
-      "datasourceTemplate": "docker"
+      "packagePatterns": ["docker/*"]
     }
   ]
 }
