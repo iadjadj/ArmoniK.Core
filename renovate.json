@@ -19,7 +19,7 @@
     {
       "matchPackagePrefixes":["ArmoniK"],
       "groupName":"ArmoniK",
-      "excludePackgePrefixes":["ArmoniK.Api"]
+      "excludePackagePrefixes":["ArmoniK.Api"]
     }
   ]
 }
