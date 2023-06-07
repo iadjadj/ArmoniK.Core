@@ -13,11 +13,7 @@
     {
       "matchPackagePrefixes": [ "ArmoniK" ],
       "excludePackagePrefixes": [ "ArmoniK.Api" ],
-      "groupName": "packages Armonik",
-      "matchUpdateTypes": [
-        "minor",
-        "major"
-      ]
+      "groupName": "packages Armonik"
     },
     {
       "matchPackagePrefixes": [ "Htc.Mock" ],
