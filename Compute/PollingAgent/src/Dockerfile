@@ -2,7 +2,7 @@ ARG BASE_IMAGE
 ARG VERSION=1.0.0.0
 FROM $BASE_IMAGE:$VERSION AS base
 
-FROM mcr.microsoft.com/dotnet/aspnet:6.0
+FROM mcr.microsoft.com/dotnet/aspnet:7.0
 WORKDIR /adapters/queue/amqp
 COPY --from=base /app/publish/amqp .
 WORKDIR /adapters/queue/rabbit
