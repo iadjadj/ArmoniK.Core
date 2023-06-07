@@ -1,16 +1,17 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "docker": {
+
+  "extends": [
+    "config:base",
+    ":semanticCommits",
+    "docker:*",
+    ":dependencyDashboard"
+ ],
+   "docker": {
     "enabled": true,
     "extends": ["docker:*"],
     "labels": ["docker"]
   },
-  "extends": [
-    "config:base",
-    ":semanticCommits",
-    ":dependencyDashboard"
- ],
-  
   
   "packageRules": [
     {
