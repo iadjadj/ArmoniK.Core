@@ -52,7 +52,7 @@
       "excludePackagePrefixes": ["ArmoniK"],
       "groupName": "packages terraform"
       
-    },
+    }
   ]
 
 }
