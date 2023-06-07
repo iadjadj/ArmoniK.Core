@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   queue:
-    image: symptoma/activemq:5.16.3
+    image: symptoma/activemq:5.18.0
     networks:
       - armonik-backend
     ports:
