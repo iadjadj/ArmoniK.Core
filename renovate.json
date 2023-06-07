@@ -13,6 +13,10 @@
       "matchPackagePrefixes": [ "ArmoniK" ],
       "excludePackagePrefes": [ "ArmoniK.Api" ],
       "groupName": "packages Armonik"
+      "matchUpdateTypes": [
+        "minor",
+        "major"
+      ]
     },
     {
       "description": "Group dependencies from docker files ",
@@ -33,14 +37,6 @@
       "groupName": "packages nuget"
       
     } 
-    {
-      "matchPackagePatterns": ["*"],
-      "excludePackagePrefixes": [ "ArmoniK", "Htc.Mock" ],
-      "matchUpdateTypes": [
-        "minor",
-        "major"
-      ]
-    }
   ]
 
 }
