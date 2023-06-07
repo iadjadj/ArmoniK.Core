@@ -1,39 +1,78 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-
   "extends": [
     "config:base",
-    ":semanticCommits",
-    ":dependencyDashboardApproval"
- ],
+    "group:allNonMajor",
+    ":semanticCommitTypeAll(chore)",
+    "helpers:pinGitHubActionDigests"
+  ],
+  "rangeStrategy": "bump",
   "packageRules": [
     {
-      "matchPackagePatterns":["*"],
-      "groupName":"other packages"
+      "groupName": "npm packages",
+      "groupSlug": "npm",
+      "matchDatasources": [
+        "npm"
+      ]
     },
     {
-      "matchPackagePrefixes":["ArmoniK"],
-      "groupName":"ArmoniK"
+      "groupName": "nuget packages",
+      "groupSlug": "nuget",
+      "excludePackagePrefixes": [
+        "ArmoniK.Api",
+        "ArmoniK.Utils"
+      ],
+      "matchDatasources": [
+        "nuget"
+      ]
     },
     {
-      "matchPackagePrefixes":["ArmoniK.Api"],
-      "groupName":"ArmoniK.Api"
+      "groupName": "ArmoniK.Api",
+      "groupSlug": "nuget-armonik-api",
+      "matchPackagePrefixes": [
+        "ArmoniK.Api"
+      ],
+      "matchDatasources": [
+        "nuget"
+      ]
     },
     {
-      "matchPackagePrefixes":[ "Htc.Mock" ],
-      "groupName":" Htc.Mock"
+      "groupName": "ArmoniK.Utils",
+      "groupSlug": "nuget-armonik-utils",
+      "matchPackagePrefixes": [
+        "ArmoniK.Utils"
+      ],
+      "matchDatasources": [
+        "nuget"
+      ]
     },
     {
-      "matchPackagePatterns": ["^nuget/"],
-      "groupName": "NuGet"
+      "groupName": "docker images",
+      "groupSlug": "docker",
+      "matchDatasources": [
+        "docker"
+      ]
     },
     {
-      "matchPackagePatterns": ["^terraform/"],
-      "groupName": "Terraform"
+      "groupName": "terraform modules",
+      "groupSlug": "terraform-module",
+      "matchDatasources": [
+        "terraform-module"
+      ]
     },
     {
-      "matchPackagePatterns": ["^docker/"],
-      "groupName": "Docker"
+      "groupName": "terraform modules",
+      "groupSlug": "terraform-provider",
+      "matchDatasources": [
+        "terraform-provider"
+      ]
+    },
+    {
+      "groupName": "github actions",
+      "groupSlug": "github-actions",
+      "matchDatasources": [
+        "github-tags"
+      ]
     }
   ]
 }
