@@ -13,12 +13,12 @@
       "groupName":"other packages"
     },
     {
-      "matchPackagePrefixes":["ArmoniK"],
-      "groupName":"ArmoniK"
-    },
-    {
       "matchPackagePrefixes":["ArmoniK.Api"],
       "groupName":"ArmoniK.Api"
+    },
+        {
+      "matchPackagePrefixes":["ArmoniK"],
+      "groupName":"ArmoniK"
     },
     {
     "matchPaths": ["**.csproj"],
