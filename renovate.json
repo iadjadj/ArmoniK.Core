@@ -24,16 +24,16 @@
       "groupName":" Htc.Mock"
     },
     {
-      "groupName": "NuGet",
-      "packageNames": ["^nuget/"]
+      "matchPackagePatterns": ["^nuget/"],
+      "groupName": "NuGet"
     },
     {
-      "groupName": "Terraform",
-      "packageNames": ["^terraform/"]
+      "matchPackagePatterns": ["^terraform/"],
+      "groupName": "Terraform"
     },
     {
-      "groupName": "Docker",
-      "packageNames": ["^docker/"]
+      "matchPackagePatterns": ["^docker/"],
+      "groupName": "Docker"
     }
   ]
 }
