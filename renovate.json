@@ -28,6 +28,7 @@
     },
     {
       "groupName": "ArmoniK.Api",
+      "matchUpdateTypes": [ "minor", "patch" ],
       "groupSlug": "nuget-armonik-api",
       "matchPackagePrefixes": [
         "ArmoniK.Api"
