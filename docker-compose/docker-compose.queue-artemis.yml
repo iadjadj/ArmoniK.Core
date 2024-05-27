@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   queue:
-    image: vromero/activemq-artemis:2.6.1
+    image: vromero/activemq-artemis:2.16.0
     environment:
       ENABLE_JMX_EXPORTER: "true"
       ARTEMIS_MIN_MEMORY: "1512M"
