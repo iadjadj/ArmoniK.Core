@@ -16,7 +16,7 @@ jobs:
       version: ${{ steps.genver.outputs.version }}
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
       with:
         ref: ${{ github.ref }}
         fetch-depth: 0
@@ -46,7 +46,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
       with:
         ref: ${{ github.ref }}
         submodules: true
@@ -91,7 +91,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
       with:
         ref: ${{ github.ref }}
         submodules: true
@@ -129,7 +129,7 @@ jobs:
     runs-on: windows-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
       with:
         ref: ${{ github.ref }}
         submodules: true
@@ -151,7 +151,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
       with:
         ref: ${{ github.ref }}
         submodules: true
@@ -168,7 +168,7 @@ jobs:
       VERSION: ${{ needs.versionning.outputs.version }}
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
       with:
         ref: ${{ github.ref }}
 
@@ -192,7 +192,7 @@ jobs:
       VERSION: ${{ needs.versionning.outputs.version }}
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
       with:
         ref: ${{ github.ref }}
         submodules: true
@@ -245,7 +245,7 @@ jobs:
            path: ./Tests/Bench/Client/src/Dockerfile
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
       with:
         ref: ${{ github.ref }}
         submodules: true
@@ -269,7 +269,7 @@ jobs:
       VERSION: ${{ needs.versionning.outputs.version }}
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
       with:
         ref: ${{ github.ref }}
         submodules: true
@@ -279,14 +279,14 @@ jobs:
           sudo snap install --edge --classic just
 
     - name: Set up QEMU
-      uses: docker/setup-qemu-action@v2
+      uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3 # v3
 
     - name: Set up Docker Buildx
       id: buildx
-      uses: docker/setup-buildx-action@v2
+      uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb # v3
 
     - name: login
-      uses: docker/login-action@v2
+      uses: docker/login-action@0d4c9c5ea7693da7b068278f7b52bda2a190a446 # v3
       with:
         username: ${{ secrets.DOCKER_HUB_LOGIN }}
         password: ${{ secrets.DOCKER_HUB_TOKEN }}
@@ -335,20 +335,20 @@ jobs:
            path: ./Tests/Bench/Client/src/Dockerfile
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
       with:
         ref: ${{ github.ref }}
         submodules: true
 
     - name: Set up QEMU
-      uses: docker/setup-qemu-action@v2
+      uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3 # v3
 
     - name: Set up Docker Buildx
       id: buildx
-      uses: docker/setup-buildx-action@v2
+      uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb # v3
 
     - name: login
-      uses: docker/login-action@v2
+      uses: docker/login-action@0d4c9c5ea7693da7b068278f7b52bda2a190a446 # v3
       with:
         username: ${{ secrets.DOCKER_HUB_LOGIN }}
         password: ${{ secrets.DOCKER_HUB_TOKEN }}
@@ -357,7 +357,7 @@ jobs:
       run: echo ${{ steps.buildx.outputs.platforms }}
 
     - name: Build and push
-      uses: docker/build-push-action@v3
+      uses: docker/build-push-action@94f8f8c2eec4bc3f1d78c1755580779804cb87b2 # v6
       with:
         file: ${{ matrix.path }}
         context: .
@@ -392,7 +392,7 @@ jobs:
           - Verbose
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
         with:
           ref: ${{ github.ref }}
           submodules: true
@@ -406,7 +406,7 @@ jobs:
           sudo snap install --edge --classic just
 
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v2
+        uses: hashicorp/setup-terraform@651471c36a6092792c552e8b1bef71e592b462d8 # v3
 
       - name: Deploy Core
         run: |
@@ -471,7 +471,7 @@ jobs:
     name: HtcMock ${{ matrix.queue }} ${{ matrix.object }} ${{ matrix.log-level }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
         with:
           ref: ${{ github.ref }}
           submodules: true
@@ -485,7 +485,7 @@ jobs:
           sudo snap install --edge --classic just
 
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v2
+        uses: hashicorp/setup-terraform@651471c36a6092792c552e8b1bef71e592b462d8 # v3
 
       - name: Deploy Core
         run: |
@@ -619,7 +619,7 @@ jobs:
     name: "Test connectivity - Ca installed ${{ matrix.ca }}"
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
         with:
           ref: ${{ github.ref }}
           submodules: true
@@ -633,7 +633,7 @@ jobs:
           sudo snap install --edge --classic just
 
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v2
+        uses: hashicorp/setup-terraform@651471c36a6092792c552e8b1bef71e592b462d8 # v3
 
       - name: Deploy Core
         run: |
@@ -691,7 +691,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
         with:
           ref: ${{ github.ref }}
           submodules: true
@@ -705,7 +705,7 @@ jobs:
           sudo snap install --edge --classic just
 
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v2
+        uses: hashicorp/setup-terraform@651471c36a6092792c552e8b1bef71e592b462d8 # v3
 
       - name: Deploy Core
         run: |
@@ -786,7 +786,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
         with:
           ref: ${{ github.ref }}
           submodules: true
@@ -800,7 +800,7 @@ jobs:
           sudo snap install --edge --classic just
 
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v2
+        uses: hashicorp/setup-terraform@651471c36a6092792c552e8b1bef71e592b462d8 # v3
 
       - name: Deploy Core
         run: |
@@ -850,7 +850,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
         with:
           ref: ${{ github.ref }}
           submodules: true
@@ -864,7 +864,7 @@ jobs:
           sudo snap install --edge --classic just
 
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v2
+        uses: hashicorp/setup-terraform@651471c36a6092792c552e8b1bef71e592b462d8 # v3
 
       - name: Deploy Core
         run: |

@@ -9,12 +9,12 @@ jobs:
     timeout-minutes: 15
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
       with:
         ref: ${{ github.ref }}
 
     - name: Install .NET Core
-      uses: actions/setup-dotnet@v3
+      uses: actions/setup-dotnet@4d6c8fcf3c8f7a60068d26b594648e99df24cee3 # v4
       with:
         dotnet-version: 6.x
 
@@ -50,7 +50,7 @@ jobs:
       run: |
         git diff > patch-csharp.diff
 
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4
       if: ${{ failure() && steps.check-diff.conclusion == 'failure' }}
       with:
         name: patch-csharp
@@ -60,7 +60,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
         with:
           ref: ${{ github.ref }}
 
