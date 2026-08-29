@@ -16,7 +16,7 @@ jobs:
       version: ${{ steps.genver.outputs.version }}
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       with:
         ref: ${{ github.ref }}
         fetch-depth: 0
@@ -46,7 +46,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       with:
         ref: ${{ github.ref }}
         submodules: true
@@ -66,7 +66,7 @@ jobs:
         dotnet test --logger "trx;LogFileName=test-results.trx"
 
     - name: Test Report
-      uses: dorny/test-reporter@v1
+      uses: dorny/test-reporter@a43b3a5f7366b97d083190328d2c652e1a8b6aa2 # v3
       if: success() || failure()
       with:
         name: Test - ${{ matrix.os }} ${{ matrix.projects }}
@@ -91,7 +91,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       with:
         ref: ${{ github.ref }}
         submodules: true
@@ -110,7 +110,7 @@ jobs:
         dotnet test --logger "trx;LogFileName=test-results.trx"
 
     - name: Test Report
-      uses: dorny/test-reporter@v1
+      uses: dorny/test-reporter@a43b3a5f7366b97d083190328d2c652e1a8b6aa2 # v3
       if: success() || failure()
       with:
         name: Test - ${{ matrix.queue }} ${{ matrix.projects }}
@@ -129,7 +129,7 @@ jobs:
     runs-on: windows-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       with:
         ref: ${{ github.ref }}
         submodules: true
@@ -140,7 +140,7 @@ jobs:
         dotnet test --logger "trx;LogFileName=test-results.trx"
 
     - name: Test Report
-      uses: dorny/test-reporter@v1
+      uses: dorny/test-reporter@a43b3a5f7366b97d083190328d2c652e1a8b6aa2 # v3
       if: success() || failure()
       with:
         name: Test - windows ${{ matrix.projects }}
@@ -151,7 +151,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       with:
         ref: ${{ github.ref }}
         submodules: true
@@ -168,7 +168,7 @@ jobs:
       VERSION: ${{ needs.versionning.outputs.version }}
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       with:
         ref: ${{ github.ref }}
 
@@ -192,7 +192,7 @@ jobs:
       VERSION: ${{ needs.versionning.outputs.version }}
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       with:
         ref: ${{ github.ref }}
         submodules: true
@@ -245,7 +245,7 @@ jobs:
            path: ./Tests/Bench/Client/src/Dockerfile
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       with:
         ref: ${{ github.ref }}
         submodules: true
@@ -269,7 +269,7 @@ jobs:
       VERSION: ${{ needs.versionning.outputs.version }}
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       with:
         ref: ${{ github.ref }}
         submodules: true
@@ -279,14 +279,14 @@ jobs:
           sudo snap install --edge --classic just
 
     - name: Set up QEMU
-      uses: docker/setup-qemu-action@v2
+      uses: docker/setup-qemu-action@96fe6ef7f33517b61c61be40b68a1882f3264fb8 # v4
 
     - name: Set up Docker Buildx
       id: buildx
-      uses: docker/setup-buildx-action@v2
+      uses: docker/setup-buildx-action@37fe631027851001ddb9b187196cc803df7f5f0e # v4
 
     - name: login
-      uses: docker/login-action@v2
+      uses: docker/login-action@dbcb813823bdd20940b903addbd779551569679f # v4
       with:
         username: ${{ secrets.DOCKER_HUB_LOGIN }}
         password: ${{ secrets.DOCKER_HUB_TOKEN }}
@@ -335,20 +335,20 @@ jobs:
            path: ./Tests/Bench/Client/src/Dockerfile
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       with:
         ref: ${{ github.ref }}
         submodules: true
 
     - name: Set up QEMU
-      uses: docker/setup-qemu-action@v2
+      uses: docker/setup-qemu-action@96fe6ef7f33517b61c61be40b68a1882f3264fb8 # v4
 
     - name: Set up Docker Buildx
       id: buildx
-      uses: docker/setup-buildx-action@v2
+      uses: docker/setup-buildx-action@37fe631027851001ddb9b187196cc803df7f5f0e # v4
 
     - name: login
-      uses: docker/login-action@v2
+      uses: docker/login-action@dbcb813823bdd20940b903addbd779551569679f # v4
       with:
         username: ${{ secrets.DOCKER_HUB_LOGIN }}
         password: ${{ secrets.DOCKER_HUB_TOKEN }}
@@ -357,7 +357,7 @@ jobs:
       run: echo ${{ steps.buildx.outputs.platforms }}
 
     - name: Build and push
-      uses: docker/build-push-action@v3
+      uses: docker/build-push-action@53b7df96c91f9c12dcc8a07bcb9ccacbed38856a # v7
       with:
         file: ${{ matrix.path }}
         context: .
@@ -392,7 +392,7 @@ jobs:
           - Verbose
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           ref: ${{ github.ref }}
           submodules: true
@@ -406,7 +406,7 @@ jobs:
           sudo snap install --edge --classic just
 
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v2
+        uses: hashicorp/setup-terraform@dfe3c3f87815947d99a8997f908cb6525fc44e9e # v4
 
       - name: Deploy Core
         run: |
@@ -422,7 +422,7 @@ jobs:
           dotnet test --logger "trx;LogFileName=test-results.trx"
 
       - name: Test Report
-        uses: dorny/test-reporter@v1
+        uses: dorny/test-reporter@a43b3a5f7366b97d083190328d2c652e1a8b6aa2 # v3
         if: success() || failure()
         with:
           name: Test - ${{ matrix.queue }} x ${{ matrix.log-level }}
@@ -471,7 +471,7 @@ jobs:
     name: HtcMock ${{ matrix.queue }} ${{ matrix.object }} ${{ matrix.log-level }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           ref: ${{ github.ref }}
           submodules: true
@@ -485,7 +485,7 @@ jobs:
           sudo snap install --edge --classic just
 
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v2
+        uses: hashicorp/setup-terraform@dfe3c3f87815947d99a8997f908cb6525fc44e9e # v4
 
       - name: Deploy Core
         run: |
@@ -619,7 +619,7 @@ jobs:
     name: "Test connectivity - Ca installed ${{ matrix.ca }}"
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           ref: ${{ github.ref }}
           submodules: true
@@ -633,7 +633,7 @@ jobs:
           sudo snap install --edge --classic just
 
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v2
+        uses: hashicorp/setup-terraform@dfe3c3f87815947d99a8997f908cb6525fc44e9e # v4
 
       - name: Deploy Core
         run: |
@@ -653,7 +653,7 @@ jobs:
         run: CA_INSTALLED=${{ matrix.ca }} dotnet test Tests/Common/Client/src/ArmoniK.Core.Common.Tests.Client.csproj --filter ArmoniK.Core.Common.Tests.Client.ConnectionTest --logger "trx;LogFileName=test-results.trx"
 
       - name: Test Report
-        uses: dorny/test-reporter@v1
+        uses: dorny/test-reporter@a43b3a5f7366b97d083190328d2c652e1a8b6aa2 # v3
         if: always()
         with:
           name: Test - Connectivity CA ${{ matrix.ca }}
@@ -691,7 +691,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           ref: ${{ github.ref }}
           submodules: true
@@ -705,7 +705,7 @@ jobs:
           sudo snap install --edge --classic just
 
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v2
+        uses: hashicorp/setup-terraform@dfe3c3f87815947d99a8997f908cb6525fc44e9e # v4
 
       - name: Deploy Core
         run: |
@@ -786,7 +786,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           ref: ${{ github.ref }}
           submodules: true
@@ -800,7 +800,7 @@ jobs:
           sudo snap install --edge --classic just
 
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v2
+        uses: hashicorp/setup-terraform@dfe3c3f87815947d99a8997f908cb6525fc44e9e # v4
 
       - name: Deploy Core
         run: |
@@ -850,7 +850,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           ref: ${{ github.ref }}
           submodules: true
@@ -864,7 +864,7 @@ jobs:
           sudo snap install --edge --classic just
 
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v2
+        uses: hashicorp/setup-terraform@dfe3c3f87815947d99a8997f908cb6525fc44e9e # v4
 
       - name: Deploy Core
         run: |
