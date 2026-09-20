@@ -33,7 +33,7 @@ jobs:
           ref: ${{ github.ref }}
           submodules: true
 
-      - uses: aneoconsulting/ArmoniK@main
+      - uses: aneoconsulting/ArmoniK@880747d7cafb9186b6cf126bc001f5ff9c300737 # main
         id: deploy-infra
         with:
           control-plane-image: dockerhubaneo/armonik_control
@@ -93,7 +93,7 @@ jobs:
           ref: ${{ github.ref }}
           submodules: true
 
-      - uses: aneoconsulting/ArmoniK@main
+      - uses: aneoconsulting/ArmoniK@880747d7cafb9186b6cf126bc001f5ff9c300737 # main
         id: deploy-infra
         with:
           control-plane-image: dockerhubaneo/armonik_control
